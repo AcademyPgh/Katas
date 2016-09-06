@@ -1,0 +1,1 @@
+# Collection of Katas for Academy Pittsburgh
