@@ -1,23 +1,17 @@
-class Denomination
-	attr_accessor :name
-	attr_accessor :value
-end
-
 class RomanConverter
-	attr_accessor :denominations
-	
 	def convert(number)
-	result = "";
-		@denominations.each do |denomination|
-			while number >= denomination[:value]
-				number -= denomination[:value]
-				result += denomination[:name]
-			end
+	result = ""
+	@denominations.each do |denomination|
+		while number >= denomination[:value]
+			number -= denomination[:value]
+			result << denomination[:name]
 		end
+	end
 	result
 	end
 	
-	def setup_denominations
+	# Constructor/Initializer
+	def initialize
 		@denominations = []
 		
 		add_denomination("C", 100)
